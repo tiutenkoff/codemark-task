@@ -1,14 +1,16 @@
-import React from 'react'
+import React from 'react';
 
 interface PropsButton {
     title: string,
     color: string,
+    disabled?: boolean,
     onDownload?: (e: React.MouseEvent<HTMLButtonElement>) => void,
     onGroup?: () => void,
+    isGrouped?: () => void,
 }
 
-export const Button: React.FC<PropsButton> = ({ title, color, onDownload, onGroup }) => {
+export const Button: React.FC<PropsButton> = ({ title, color, onDownload, onGroup, disabled, isGrouped }) => {
     return (
-        <button onClick={onDownload || onGroup} type="button" className={`form__item btn btn-${color}`}>{ title }</button>
+        <button disabled={disabled} onClick={onDownload || onGroup  || isGrouped} type="button" className={`form__item btn btn-${color}`}>{ title }</button>
     )
 }
