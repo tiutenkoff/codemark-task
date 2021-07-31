@@ -31,7 +31,7 @@ const App: React.FC = () => {
     setInputValue(e.target.value);
   };
 
-  const showAlert = (title: string) => {
+  const showAlert = (title: string): void => {
     setAlert(prev => ({
       ...prev,
       title,
@@ -45,7 +45,7 @@ const App: React.FC = () => {
     }, 3000)
   };
 
-  const clickOnImage = (title: string) => {
+  const clickOnImage = (title: string): void => {
     setInputValue(title);
   };
 
@@ -54,8 +54,8 @@ const App: React.FC = () => {
   }
 
   function makeRandTag(): string {
-    let text = "";
-    let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,";
+    let text: string = "";
+    let possible: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,";
     for (let i = 0; i < getRandomNumber(); i++)
       text += possible.charAt(Math.floor(Math.random() * possible.length));
   
@@ -152,7 +152,7 @@ const App: React.FC = () => {
   };
   
 
-  const groupImages = () => {
+  const groupImages = (): void => {
     setIsGrouped(prev => prev = !prev);
   };
 
